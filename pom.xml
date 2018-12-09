@@ -76,7 +76,7 @@
         <version>3.0</version>
         <configuration>
             <fork>true</fork>
-      		<executable>C:\Program Files\Java\jdk1.8.0_66\bin\javac.exe</executable>
+      		<executable>C:\Program Files\Java\jdk1.8.0_191\bin\javac.exe</executable>
         	<source>1.8</source>
         	<target>1.8</target>
         </configuration>
@@ -172,6 +172,37 @@ the unit tests of an application.It generates reports in two different file form
     </executions>
   </plugin>
   </plugins>
-  </build>
+   <pluginManagement>
+   	<plugins>
+   		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+   		<plugin>
+   			<groupId>org.eclipse.m2e</groupId>
+   			<artifactId>lifecycle-mapping</artifactId>
+   			<version>1.0.0</version>
+   			<configuration>
+   				<lifecycleMappingMetadata>
+   					<pluginExecutions>
+   						<pluginExecution>
+   							<pluginExecutionFilter>
+   								<groupId>com.github.temyers</groupId>
+   								<artifactId>
+   									cucumber-jvm-parallel-plugin
+   								</artifactId>
+   								<versionRange>[5.0.0,)</versionRange>
+   								<goals>
+   									<goal>generateRunners</goal>
+   								</goals>
+   							</pluginExecutionFilter>
+   							<action>
+   								<ignore></ignore>
+   							</action>
+   						</pluginExecution>
+   					</pluginExecutions>
+   				</lifecycleMappingMetadata>
+   			</configuration>
+   		</plugin>
+   	</plugins>
+   </pluginManagement>
+   </build>
  <!--  ******************  Build Plugin added  **************** -->
 </project>
