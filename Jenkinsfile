@@ -5,7 +5,7 @@ pipeline {
         stage('Example') {
             steps {
             
-                withMaven(maven : 'Maven 3.6.0) {
+                withMaven(maven : 'Maven 3.6.0') {
                 sh 'mvn --version'
             }
         }
