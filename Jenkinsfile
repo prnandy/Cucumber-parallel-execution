@@ -1,13 +1,44 @@
-pipeline {
+pipeline{
+
     agent any
-   
+
     stages {
-        stage('Example') {
+
+        stage ('Compile Stage') {
+
             steps {
-            
-                withMaven(maven : 'Maven 3.6.0') {
-                sh 'mvn --version'
+
+                withMaven(maven : 'Maven_3.6.0') {
+                    sh 'mvn clean install'
+
+                }
+
             }
         }
+    stage ('Test Stage') {
+
+            steps {
+
+                 withMaven(maven : 'Maven_3.6.0') {
+                    sh 'mvn test'
+
+                }
+
+            }
+        }
+
+
+        stage ('Cucumber Reports') {
+
+            steps {
+                cucumber buildStatus: "UNSTABLE",
+                    fileIncludePattern: "**/cucumber.json",
+                    jsonReportDirectory: 'target'
+
+            }
+
+        }
+
     }
+
 }
