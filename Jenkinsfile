@@ -4,41 +4,15 @@ pipeline{
 
     stages {
 
-        stage ('Compile Stage') {
+        stage ('Build') {
 
             steps {
 
-                withMaven(...) {
-                    sh 'mvn clean install'
+               echo 'this is a minimal pipeline
 
                 }
 
             }
         }
-    stage ('Test Stage') {
-
-            steps {
-
-                withMaven(...) {
-                    sh 'mvn test'
-
-                }
-
-            }
-        }
-
-
-        stage ('Cucumber Reports') {
-
-            steps {
-                cucumber buildStatus: "UNSTABLE",
-                    fileIncludePattern: "**/cucumber.json",
-                    jsonReportDirectory: 'target'
-
-            }
-
-        }
-
-    }
-
+    
 }
