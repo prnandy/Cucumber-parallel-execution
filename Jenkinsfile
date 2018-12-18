@@ -1,22 +1,12 @@
 pipeline {
     agent any
-    tools { 
-        maven 'Maven 3.6.0' 
-        jdk 'jdk8' 
+    tools {
+        maven 'apache-maven-3.6.0' 
     }
     stages {
-        stage ('Initialize') {
+        stage('Example') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "MAVEN_HOME = ${MAVEN_HOME}"
-                ''' 
-            }
-        }
-
-        stage ('Build') {
-            steps {
-                echo 'This is a minimal pipeline.'
+                sh 'mvn --version'
             }
         }
     }
