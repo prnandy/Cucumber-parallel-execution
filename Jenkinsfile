@@ -1,9 +1,6 @@
 pipeline{
 
     agent any
-    tools{
-    maven 'Maven_3.0'
-    }
 
     stages {
 
@@ -11,8 +8,10 @@ pipeline{
 
             steps {
 
-                    sh "mvn clean install"
+                withMaven(maven: 'Maven 3.0') {
+                    sh 'mvn clean install'
 
+                }
 
             }
         }
@@ -20,8 +19,10 @@ pipeline{
 
             steps {
 
-                    sh "mvn test"
+                withMaven(maven: 'Maven 3.0') {
+                    sh 'mvn test'
 
+                }
 
             }
         }
