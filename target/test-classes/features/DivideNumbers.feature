@@ -6,6 +6,6 @@ Feature: Dividing numbers
     When User enter the first number
      And User enter the second number
     Then User divide this two number
-     And Print the value
+     And Print the div
 
  

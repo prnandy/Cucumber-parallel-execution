@@ -76,7 +76,7 @@
         <version>3.6.0</version>
         <configuration>
             <fork>true</fork>
-      		<executable>C:\Program Files\Java\jdk1.8.0_191\bin\javac.exe</executable>
+      		<executable>C:\Program Files\Java\jdk1.8.0_91\bin\javac.exe</executable>
         	<source>1.8</source>
         	<target>1.8</target>
         </configuration>
@@ -127,7 +127,7 @@ the unit tests of an application.It generates reports in two different file form
       </plugin>
 <!-- **************************************************************************************** -->     
 <!--  **https://mvnrepository.com/artifact/com.github.temyers/cucumber-jvm-parallel-plugin ** -->
-<plugin>
+ <plugin>
     <groupId>com.github.temyers</groupId>
     <artifactId>cucumber-jvm-parallel-plugin</artifactId>
     <version>5.0.0</version>
@@ -142,7 +142,7 @@ the unit tests of an application.It generates reports in two different file form
                 <glue>
                 <package>stepDefinition</package>
           		</glue>
-          		<outputDirectory>src/test/java/autoGenerateRunner</outputDirectory> <!-- runner will generate here -->
+          		<outputDirectory>src/test/java/autoGenerateRunner/</outputDirectory> <!-- runner will generate here -->
           		<featuresDirectory>src/test/resources/features/</featuresDirectory><!--Cucumber feature file location-->
                 <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir><!--Cucumber default reporting path-->
 					<plugins>
@@ -157,8 +157,8 @@ the unit tests of an application.It generates reports in two different file form
 				<strict>true</strict>
 				<monochrome>true</monochrome>
                 <tags>
-               <tag>@MultiplyNumbers,@AddNumbers</tag>
-<!-- 					<tag>@AddTwo</tag> -->
+              <tag>@MultiplyNumbers,@AddNumbers,@negativeNumbers,@PositiveNumbers,@subtractNumbers,@divideNumbers</tag> 
+ 					<!--  <tag>@AddTwo,@AddThree,@divideTwo,@MultiplyTwo,@MultiplyThree,@negativeCheck,@positiveCheck,@subtractTwo</tag>--> 
                 </tags>
                 <useTestNG>false</useTestNG>
                 <!-- The naming scheme to use for the generated test classes.  One of ['simple', 'feature-title', 'pattern'] -->
@@ -166,7 +166,7 @@ the unit tests of an application.It generates reports in two different file form
         		<!-- The class naming pattern to use.  Only required/used if naming scheme is 'pattern'.-->
         		<namingPattern>Parallel{c}IT</namingPattern>
         		<!-- One of [SCENARIO, FEATURE]. SCENARIO generates one runner per scenario.  FEATURE generates a runner per feature. -->
-                <parallelScheme>FEATURE</parallelScheme>
+                <parallelScheme>FEATURE</parallelScheme> 
             </configuration>
         </execution>
     </executions>

@@ -7,13 +7,13 @@ public class AddNumberStepDef
 	int sum;
 	
 	@Then("^User add this two number$")
-	public void user_add_this_two_number() throws Throwable 
+	public void User_add_this_two_number() throws Throwable 
 	{
 		sum = 10+20;
 	}
 	
 	@Then("^User add this three number$")
-	public void user_add_this_three_number() throws Throwable 
+	public void User_add_this_three_number() throws Throwable 
 	{
 		sum =10+20+30;
 	}
