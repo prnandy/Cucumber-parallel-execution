@@ -32,7 +32,7 @@ pipeline{
 
             steps {
                 cucumber buildStatus: "UNSTABLE",
-                    fileIncludePattern: "**/cucumber-parallel.json",
+                    fileIncludePattern: "**/reports.cucumber-reports.cucumber-html-reports",
                     jsonReportDirectory: 'target'
 
             }
