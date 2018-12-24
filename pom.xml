@@ -148,8 +148,8 @@ the unit tests of an application.It generates reports in two different file form
 					<plugins>
     				<plugin>
        				 <!--The available options are junit, testng, html, pretty, json, usage and rerun -->
-        				<name>html</name>
-        				<extension>html</extension>
+        				<name>json</name>
+        				<extension>json</extension>
        				 <!--Optional output directory. Overrides cucumberOutputDirectory. Usefull when different plugins create files with the same extension-->
         				<outputDirectory>${project.build.directory}/cucumber-parallel/json/</outputDirectory> 
     				</plugin>
