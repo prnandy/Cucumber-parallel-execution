@@ -151,8 +151,7 @@ the unit tests of an application.It generates reports in two different file form
         				<name>html</name>
         				<extension>html</extension>
        				 <!--Optional output directory. Overrides cucumberOutputDirectory. Usefull when different plugins create files with the same extension-->
-        				<!--<outputDirectory>${project.build.directory}/cucumber-parallel/json/</outputDirectory>  -->
-        				<outputDirectory>${project.build.directory}/reports/cucumber-reports/cucumber-html-reports/</outputDirectory>
+        				<outputDirectory>${project.build.directory}/cucumber-parallel/json/</outputDirectory> 
     				</plugin>
 					</plugins>
 				<strict>true</strict>
