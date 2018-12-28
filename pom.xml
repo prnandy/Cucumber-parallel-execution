@@ -116,11 +116,12 @@ the unit tests of an application.It generates reports in two different file form
             </goals>
             <configuration>
               <projectName>AutoRunner_Cucumber</projectName>
-              <outputDirectory>${project.build.directory}/reports/cucumber-reports/cucumber-html-reports/cucumber-html-reports</outputDirectory>
+               <outputDirectory>${project.build.directory}/reports/cucumber-reports/</outputDirectory>
               <cucumberOutput>target/cucumber-parallel/json</cucumberOutput>
-              <skippedFails>true</skippedFails>
+             <!--  <skippedFails>true</skippedFails>
               <enableFlashCharts>false</enableFlashCharts>
-              <buildNumber>42</buildNumber>
+              <buildNumber>42</buildNumber> -->
+              <parallelTesting>true</parallelTesting>
             </configuration>
           </execution>
         </executions>
@@ -144,7 +145,8 @@ the unit tests of an application.It generates reports in two different file form
           		</glue>
           		<outputDirectory>src/test/java/autoGenerateRunner/</outputDirectory> <!-- runner will generate here -->
           		<featuresDirectory>src/test/resources/features/</featuresDirectory><!--Cucumber feature file location-->
-                <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir><!--Cucumber default reporting path-->
+                <cucumberOutputDir>target/cucumber-parallel/</cucumberOutputDir><!--Cucumber default reporting path-->
+                <format>html</format>
 					<plugins>
     				<plugin>
        				 <!--The available options are junit, testng, html, pretty, json, usage and rerun -->
@@ -152,6 +154,8 @@ the unit tests of an application.It generates reports in two different file form
         				<extension>json</extension>
        				 <!--Optional output directory. Overrides cucumberOutputDirectory. Usefull when different plugins create files with the same extension-->
         				<outputDirectory>${project.build.directory}/cucumber-parallel/json</outputDirectory> 
+        				  
+        				<!--<outputDirectory>${project.build.directory}/cucumber-parallel/cucumber-html-reports</outputDirectory>   -->  
     				</plugin>
 					</plugins>
 				<strict>true</strict>
