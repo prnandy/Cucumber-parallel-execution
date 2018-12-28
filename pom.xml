@@ -116,7 +116,7 @@ the unit tests of an application.It generates reports in two different file form
             </goals>
             <configuration>
               <projectName>AutoRunner_Cucumber</projectName>
-              <outputDirectory>${project.build.directory}/reports/cucumber-reports/cucumber-html-reports</outputDirectory>
+              <outputDirectory>${project.build.directory}/reports/cucumber-reports/cucumber-html-reports/cucumber-html-reports</outputDirectory>
               <cucumberOutput>target/cucumber-parallel/json</cucumberOutput>
               <skippedFails>true</skippedFails>
               <enableFlashCharts>false</enableFlashCharts>
@@ -148,10 +148,10 @@ the unit tests of an application.It generates reports in two different file form
 					<plugins>
     				<plugin>
        				 <!--The available options are junit, testng, html, pretty, json, usage and rerun -->
-        				<name>html</name>
-        				<extension>html</extension>
+        				<name>json</name>
+        				<extension>json</extension>
        				 <!--Optional output directory. Overrides cucumberOutputDirectory. Usefull when different plugins create files with the same extension-->
-        				<outputDirectory>${project.build.directory}/reports/cucumber-reports/cucumber-html-reports/cucumber-html-reports</outputDirectory> 
+        				<outputDirectory>${project.build.directory}/cucumber-parallel/json</outputDirectory> 
     				</plugin>
 					</plugins>
 				<strict>true</strict>
