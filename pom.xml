@@ -116,7 +116,7 @@ the unit tests of an application.It generates reports in two different file form
             </goals>
             <configuration>
               <projectName>AutoRunner_Cucumber</projectName>
-              <outputDirectory>${project.build.directory}/reports/cucumber-reports</outputDirectory>
+              <outputDirectory>${project.build.directory}/reports/cucumber-reports/cucumber-html-reports</outputDirectory>
               <cucumberOutput>target/cucumber-parallel/json</cucumberOutput>
               <skippedFails>true</skippedFails>
               <enableFlashCharts>false</enableFlashCharts>
